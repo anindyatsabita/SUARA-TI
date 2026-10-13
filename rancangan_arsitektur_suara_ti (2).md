@@ -106,6 +106,4 @@ Diagram sederhana ini menunjukkan alur utama dari pengiriman aspirasi hingga mah
 
 ---
 
-## Catatan batas rancangan
 
-Rancangan ini dibuat dari dokumen tugas RPL dan klarifikasi pengguna. Detail teknis yang belum diputuskan—termasuk teknologi aplikasi, struktur basis data final, kebijakan retensi data, dan mekanisme integrasi SSO—tidak dianggap sudah ditetapkan.
