@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  color-scheme: light;
+  --ink: #172f49;
+  --mutedInk: #647488;
+  --navy: #102b40;
+  --teal: #367f84;
+  --tealDark: #28686e;
+  --cream: #fff8eb;
+  --white: #fffefd;
+  --line: #d7d9d3;
+  --shadow: 0 22px 65px rgb(12 40 56 / 18%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  background-color: #4a8d91;
+  background-image:
+    radial-gradient(ellipse at 12% 18%, transparent 0 34px, rgb(20 91 96 / 22%) 35px 39px, transparent 40px),
+    radial-gradient(ellipse at 88% 72%, transparent 0 48px, rgb(20 91 96 / 20%) 49px 53px, transparent 54px),
+    repeating-linear-gradient(148deg, transparent 0 42px, rgb(20 91 96 / 12%) 43px 47px, transparent 48px 83px),
+    linear-gradient(135deg, #538f93, #3f7d83);
+  background-size: 180px 160px, 220px 200px, 130px 130px, cover;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.siteHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(22px, 6vw, 88px);
+  color: var(--white);
+  background: var(--navy);
+  box-shadow: 0 3px 12px rgb(7 28 42 / 14%);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brandMark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 54%);
+  border-radius: 50%;
+  color: #f7d7a2;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.brandName {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.brandName span {
+  color: #f1c98d;
+}
+
+.mainNav {
+  display: flex;
+  height: 72px;
+  align-items: stretch;
+  gap: clamp(20px, 4vw, 48px);
+  margin-left: auto;
+  margin-right: 36px;
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: rgb(255 255 255 / 76%);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 160ms ease;
+}
+
+.navLink:hover,
+.navLink.isActive {
+  color: var(--white);
+}
+
+.navLink.isActive::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: #e7c68f;
+  content: "";
+}
+
+.profileButton {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 42%);
+  border-radius: 50%;
+  color: var(--navy);
+  background: #e5e7e5;
+  cursor: pointer;
+}
+
+.profileInitials {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pageContent {
+  display: flex;
+  min-height: calc(100vh - 72px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px 30px;
+}
+
+.formCard {
+  width: min(100%, 790px);
+  padding: clamp(28px, 5vw, 54px) clamp(24px, 6vw, 64px);
+  border: 1px solid rgb(255 255 255 / 54%);
+  border-radius: 4px;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.formIntro {
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--tealDark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(25px, 4vw, 31px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.formDescription {
+  max-width: 540px;
+  margin: 10px 0 0;
+  color: var(--mutedInk);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.aspirationForm {
+  display: grid;
+  gap: 24px;
+}
+
+.formField {
+  display: grid;
+  gap: 8px;
+}
+
+.formField > label {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+}
+
+.formField > label span {
+  color: var(--mutedInk);
+  font-weight: 400;
+}
+
+select,
+textarea,
+.attachmentField input[type="file"] {
+  width: 100%;
+  border: 1px solid #8794a0;
+  border-radius: 2px;
+  color: var(--ink);
+  background: var(--white);
+  box-shadow: inset 0 1px 2px rgb(16 43 64 / 5%);
+}
+
+select {
+  max-width: 360px;
+  min-height: 44px;
+  padding: 0 14px;
+}
+
+textarea {
+  min-height: 180px;
+  padding: 13px 15px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+select:focus,
+textarea:focus,
+.attachmentField input[type="file"]:focus-visible {
+  border-color: var(--tealDark);
+  outline: 3px solid rgb(54 127 132 / 18%);
+}
+
+textarea::placeholder {
+  color: #99a2a8;
+}
+
+.fieldHint {
+  margin: 0;
+  color: var(--mutedInk);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.formOptions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(210px, 0.9fr);
+  align-items: start;
+  gap: 28px;
+  padding-top: 2px;
+}
+
+.checkboxField {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+.checkboxField input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.customCheckbox {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #8794a0;
+  border-radius: 3px;
+  background: var(--white);
+}
+
+.checkboxField input:checked + .customCheckbox {
+  border-color: var(--tealDark);
+  background: var(--tealDark);
+}
+
+.checkboxField input:checked + .customCheckbox::after {
+  width: 8px;
+  height: 4px;
+  transform: translateY(-1px) rotate(-45deg);
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  content: "";
+}
+
+.checkboxField input:focus-visible + .customCheckbox {
+  outline: 3px solid rgb(54 127 132 / 22%);
+  outline-offset: 2px;
+}
+
+.checkboxCopy {
+  display: grid;
+  gap: 5px;
+  color: var(--mutedInk);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.checkboxCopy strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.attachmentField input[type="file"] {
+  min-height: 42px;
+  padding: 5px;
+  font-size: 11px;
+}
+
+.attachmentField input[type="file"]::file-selector-button {
+  min-height: 29px;
+  margin-right: 9px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 2px;
+  color: var(--ink);
+  background: #edf0ec;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+  border-top: 1px solid #e6dfd1;
+}
+
+.privacyNote {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  color: var(--mutedInk);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.privacyIcon {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #9aabac;
+  border-radius: 50%;
+  color: var(--tealDark);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.submitButton {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  background: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  background: var(--tealDark);
+}
+
+.submitButton:focus-visible,
+.profileButton:focus-visible,
+.navLink:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid #e7c68f;
+  outline-offset: 3px;
+}
+
+.submitButton span {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.pageFootnote {
+  margin: 18px 0 0;
+  color: rgb(255 255 255 / 84%);
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .siteHeader {
+    min-height: 64px;
+    padding: 0 18px;
+  }
+
+  .brandName {
+    display: none;
+  }
+
+  .mainNav {
+    height: 64px;
+    gap: clamp(13px, 4vw, 25px);
+    margin-right: 18px;
+  }
+
+  .navLink {
+    font-size: 10px;
+    letter-spacing: 0.7px;
+  }
+
+  .profileButton {
+    width: 34px;
+    height: 34px;
+  }
+
+  .pageContent {
+    min-height: calc(100vh - 64px);
+    justify-content: flex-start;
+    padding: 24px 14px;
+  }
+
+  .formCard {
+    padding: 27px 21px;
+  }
+
+  .formIntro {
+    margin-bottom: 26px;
+  }
+
+  .formDescription {
+    font-size: 13px;
+  }
+
+  .aspirationForm {
+    gap: 20px;
+  }
+
+  textarea {
+    min-height: 160px;
+  }
+
+  .formOptions {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .formFooter {
+    align-items: stretch;
+    flex-direction: column;
+    padding-top: 18px;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

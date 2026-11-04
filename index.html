@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Sampaikan aspirasi dan masukan untuk lingkungan Fakultas Sains dan Teknologi."
+    >
+    <title>Sampaikan Aspirasi | SUARA-TI</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="siteHeader">
+      <a class="brand" href="#" aria-label="SUARA-TI, halaman utama">
+        <span class="brandMark" aria-hidden="true">S</span>
+        <span class="brandName">SUARA<span>-TI</span></span>
+      </a>
+
+      <nav class="mainNav" aria-label="Navigasi utama">
+        <a class="navLink" href="#">Home</a>
+        <a class="navLink isActive" href="#" aria-current="page">Aspirasi</a>
+        <a class="navLink" href="#">Riwayat</a>
+      </nav>
+
+      <button class="profileButton" type="button" aria-label="Profil mahasiswa">
+        <span class="profileInitials" aria-hidden="true">M</span>
+      </button>
+    </header>
+
+    <main class="pageContent">
+      <section class="formCard" aria-labelledby="formTitle">
+        <div class="formIntro">
+          <p class="eyebrow">Ruang suara mahasiswa</p>
+          <h1 id="formTitle">Sampaikan Aspirasi</h1>
+          <p class="formDescription">
+            Ceritakan masukan atau kendala yang ingin kamu sampaikan. Setiap aspirasi
+            akan diteruskan ke pihak terkait.
+          </p>
+        </div>
+
+        <form class="aspirationForm" action="#" method="post">
+          <div class="formField categoryField">
+            <label for="category">Kategori</label>
+            <select id="category" name="category" required>
+              <option value="" selected disabled>Pilih kategori aspirasi</option>
+              <option value="akademik">Akademik</option>
+              <option value="fasilitas">Fasilitas kampus</option>
+              <option value="layanan">Layanan mahasiswa</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+          </div>
+
+          <div class="formField messageField">
+            <label for="aspiration">Aspirasi</label>
+            <textarea
+              id="aspiration"
+              name="aspiration"
+              rows="7"
+              placeholder="Tuliskan aspirasi atau masukanmu di sini..."
+              required
+            ></textarea>
+            <p class="fieldHint">Sampaikan dengan jelas agar aspirasi lebih mudah ditindaklanjuti.</p>
+          </div>
+
+          <div class="formOptions">
+            <label class="checkboxField" for="anonymous">
+              <input id="anonymous" name="anonymous" type="checkbox">
+              <span class="customCheckbox" aria-hidden="true"></span>
+              <span class="checkboxCopy">
+                <strong>Kirim sebagai anonim</strong>
+                <span>Identitasmu tidak akan ditampilkan kepada publik.</span>
+              </span>
+            </label>
+
+            <div class="formField attachmentField">
+              <label for="attachment">Lampiran <span>(opsional)</span></label>
+              <input
+                id="attachment"
+                name="attachment"
+                type="file"
+                accept=".jpg,.jpeg,.png,.pdf"
+              >
+              <p class="fieldHint">JPG, PNG, atau PDF · Maks. 5 MB</p>
+            </div>
+          </div>
+
+          <div class="formFooter">
+            <p class="privacyNote">
+              <span class="privacyIcon" aria-hidden="true">i</span>
+              Aspirasi ditinjau oleh administrator sebelum diteruskan.
+            </p>
+            <button class="submitButton" type="submit">
+              Kirim Aspirasi
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </form>
+      </section>
+      <p class="pageFootnote">Suaramu berarti untuk kampus yang lebih baik.</p>
+    </main>
+  </body>
+</html>
