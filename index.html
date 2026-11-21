@@ -39,16 +39,40 @@
           </p>
         </div>
 
-        <form class="aspirationForm" action="#" method="post">
+        <form class="aspirationForm" id="aspirationForm" novalidate>
+          <div class="formField nimField">
+            <label for="studentId">NIM</label>
+            <input
+              id="studentId"
+              name="studentId"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="Contoh: 1234567890"
+              pattern="[0-9]{10}"
+              minlength="10"
+              maxlength="10"
+              aria-describedby="studentIdError"
+              required
+            >
+            <p class="fieldError" id="studentIdError"></p>
+          </div>
+
           <div class="formField categoryField">
             <label for="category">Kategori</label>
-            <select id="category" name="category" required>
+            <select
+              id="category"
+              name="category"
+              aria-describedby="categoryError"
+              required
+            >
               <option value="" selected disabled>Pilih kategori aspirasi</option>
               <option value="akademik">Akademik</option>
               <option value="fasilitas">Fasilitas kampus</option>
               <option value="layanan">Layanan mahasiswa</option>
               <option value="lainnya">Lainnya</option>
             </select>
+            <p class="fieldError" id="categoryError"></p>
           </div>
 
           <div class="formField messageField">
@@ -57,10 +81,19 @@
               id="aspiration"
               name="aspiration"
               rows="7"
+              minlength="20"
+              maxlength="2000"
               placeholder="Tuliskan aspirasi atau masukanmu di sini..."
+              aria-describedby="aspirationHint aspirationCounter aspirationError"
               required
             ></textarea>
-            <p class="fieldHint">Sampaikan dengan jelas agar aspirasi lebih mudah ditindaklanjuti.</p>
+            <div class="fieldMeta">
+              <p class="fieldHint" id="aspirationHint">
+                Minimal 20 karakter. Sampaikan dengan jelas agar aspirasi mudah ditindaklanjuti.
+              </p>
+              <p class="characterCounter" id="aspirationCounter" aria-live="polite">0/2000</p>
+            </div>
+            <p class="fieldError" id="aspirationError"></p>
           </div>
 
           <div class="formOptions">
@@ -80,15 +113,26 @@
                 name="attachment"
                 type="file"
                 accept=".jpg,.jpeg,.png,.pdf"
+                aria-describedby="attachmentHint attachmentError"
               >
-              <p class="fieldHint">JPG, PNG, atau PDF · Maks. 5 MB</p>
+              <p class="fieldHint" id="attachmentHint">JPG, PNG, atau PDF · Maks. 5 MB</p>
+              <p class="fieldError" id="attachmentError"></p>
             </div>
           </div>
+
+          <div
+            class="formFeedback"
+            id="formFeedback"
+            role="status"
+            aria-live="polite"
+            tabindex="-1"
+            hidden
+          ></div>
 
           <div class="formFooter">
             <p class="privacyNote">
               <span class="privacyIcon" aria-hidden="true">i</span>
-              Aspirasi ditinjau oleh administrator sebelum diteruskan.
+              Identitas anonim tetap dapat dilihat administrator.
             </p>
             <button class="submitButton" type="submit">
               Kirim Aspirasi
@@ -99,5 +143,6 @@
       </section>
       <p class="pageFootnote">Suaramu berarti untuk kampus yang lebih baik.</p>
     </main>
+    <script src="script.js" defer></script>
   </body>
 </html>
