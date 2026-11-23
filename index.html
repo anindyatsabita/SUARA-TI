@@ -3,101 +3,101 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="Sampaikan aspirasi dan masukan untuk lingkungan Fakultas Sains dan Teknologi."
-    >
-    <title>Sampaikan Aspirasi | SUARA-TI</title>
+    <meta name="description" content="Wadah aspirasi mahasiswa Teknik Informatika UIN Jakarta.">
+    <title>SUARA-TI | Dari Mahasiswa, untuk Kemajuan Bersama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
   </head>
-  <body>
-    <header class="siteHeader">
-      <a class="brand" href="#" aria-label="SUARA-TI, halaman utama">
-        <span class="brandMark" aria-hidden="true">S</span>
-        <span class="brandName">SUARA<span>-TI</span></span>
-      </a>
-
-      <nav class="mainNav" aria-label="Navigasi utama">
-        <a class="navLink" href="#">Home</a>
-        <a class="navLink isActive" href="#" aria-current="page">Aspirasi</a>
-        <a class="navLink" href="#">Riwayat</a>
+  <body data-page="home">
+    <a class="skip-link" href="#konten">Lewati ke konten</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="SUARA-TI, halaman utama">SUARA-TI</a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a class="nav-link is-active" href="index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="form.html">Form</a>
+        <a class="nav-link" href="riwayat.html">Riwayat</a>
       </nav>
-
-      <button class="profileButton" type="button" aria-label="Profil mahasiswa">
-        <span class="profileInitials" aria-hidden="true">M</span>
-      </button>
+      <span class="profile-avatar" aria-hidden="true"></span>
     </header>
 
-    <main class="pageContent">
-      <section class="formCard" aria-labelledby="formTitle">
-        <div class="formIntro">
-          <p class="eyebrow">Ruang suara mahasiswa</p>
-          <h1 id="formTitle">Sampaikan Aspirasi</h1>
-          <p class="formDescription">
-            Ceritakan masukan atau kendala yang ingin kamu sampaikan. Setiap aspirasi
-            akan diteruskan ke pihak terkait.
-          </p>
+    <main id="konten">
+      <section class="hero batik-dark" aria-labelledby="hero-title">
+        <div class="hero-ornament" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="hero-content">
+          <span class="hero-kicker">SUARA-TI</span>
+          <h1 id="hero-title">Dari Mahasiswa, untuk<br><em>Kemajuan</em> Bersama</h1>
+          <p>Sampaikan gagasan dan keluhan Anda untuk mewujudkan Teknik Informatika yang lebih baik bersama</p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="form.html">Kirim Aspirasi</a>
+            <a class="button button-outline" href="#riwayat">Lihat Riwayat</a>
+          </div>
         </div>
-
-        <form class="aspirationForm" action="#" method="post">
-          <div class="formField categoryField">
-            <label for="category">Kategori</label>
-            <select id="category" name="category" required>
-              <option value="" selected disabled>Pilih kategori aspirasi</option>
-              <option value="akademik">Akademik</option>
-              <option value="fasilitas">Fasilitas kampus</option>
-              <option value="layanan">Layanan mahasiswa</option>
-              <option value="lainnya">Lainnya</option>
-            </select>
-          </div>
-
-          <div class="formField messageField">
-            <label for="aspiration">Aspirasi</label>
-            <textarea
-              id="aspiration"
-              name="aspiration"
-              rows="7"
-              placeholder="Tuliskan aspirasi atau masukanmu di sini..."
-              required
-            ></textarea>
-            <p class="fieldHint">Sampaikan dengan jelas agar aspirasi lebih mudah ditindaklanjuti.</p>
-          </div>
-
-          <div class="formOptions">
-            <label class="checkboxField" for="anonymous">
-              <input id="anonymous" name="anonymous" type="checkbox">
-              <span class="customCheckbox" aria-hidden="true"></span>
-              <span class="checkboxCopy">
-                <strong>Kirim sebagai anonim</strong>
-                <span>Identitasmu tidak akan ditampilkan kepada publik.</span>
-              </span>
-            </label>
-
-            <div class="formField attachmentField">
-              <label for="attachment">Lampiran <span>(opsional)</span></label>
-              <input
-                id="attachment"
-                name="attachment"
-                type="file"
-                accept=".jpg,.jpeg,.png,.pdf"
-              >
-              <p class="fieldHint">JPG, PNG, atau PDF · Maks. 5 MB</p>
-            </div>
-          </div>
-
-          <div class="formFooter">
-            <p class="privacyNote">
-              <span class="privacyIcon" aria-hidden="true">i</span>
-              Aspirasi ditinjau oleh administrator sebelum diteruskan.
-            </p>
-            <button class="submitButton" type="submit">
-              Kirim Aspirasi
-              <span aria-hidden="true">→</span>
-            </button>
-          </div>
-        </form>
+        <a class="scroll-cue" href="#riwayat">
+          <span>Gulir untuk melihat riwayat</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
       </section>
-      <p class="pageFootnote">Suaramu berarti untuk kampus yang lebih baik.</p>
+
+      <section class="content-section home-content batik-light" id="riwayat" aria-label="Statistik dan riwayat aspirasi">
+        <div class="content-wrap">
+          <div class="stats-grid" aria-label="Statistik aspirasi">
+            <article class="stat-card reveal"><strong data-count="128">0</strong><span><i class="stat-dot dot-navy"></i>Total aspirasi</span></article>
+            <article class="stat-card reveal"><strong data-count="74">0</strong><span><i class="stat-dot dot-green"></i>Sudah Tuntas</span></article>
+            <article class="stat-card reveal"><strong data-count="31">0</strong><span><i class="stat-dot dot-yellow"></i>Sedang Diproses</span></article>
+            <article class="stat-card reveal"><strong data-count="23">0</strong><span><i class="stat-dot dot-red"></i>Belum Diproses</span></article>
+          </div>
+
+          <section class="history-section" aria-labelledby="home-history-title">
+            <h2 class="section-title" id="home-history-title">Riwayat Aspirasi</h2>
+            <div class="filter-row">
+              <label class="filter-field">
+                <span>Kategori</span>
+                <select data-filter="category" aria-label="Filter kategori aspirasi"></select>
+              </label>
+              <label class="filter-field">
+                <span>Status</span>
+                <select data-filter="status" aria-label="Filter status aspirasi"></select>
+              </label>
+              <label class="filter-field search-field">
+                <span>Cari</span>
+                <span class="search-control">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+                  <input type="search" data-filter="search" placeholder="Cari aspirasi" autocomplete="off">
+                </span>
+              </label>
+            </div>
+            <div class="history-list" data-history-list aria-live="polite"></div>
+            <p class="empty-state" data-empty-state hidden>Tidak ada aspirasi yang sesuai dengan pencarian.</p>
+          </section>
+        </div>
+      </section>
     </main>
+    <div data-toast class="toast" role="status" aria-live="polite" hidden></div>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-about">
+          <a class="footer-brand" href="index.html">SUARA-TI</a>
+          <p>Wadah resmi aspirasi mahasiswa Teknik Informatika.</p>
+        </div>
+        <div class="footer-column">
+          <h2>Navigasi</h2>
+          <a href="index.html">Home</a><a href="form.html">Form</a><a href="riwayat.html">Riwayat</a>
+        </div>
+        <div class="footer-column">
+          <h2>Kontak</h2>
+          <a href="mailto:aspirasi@ti.example.ac.id">aspirasi@ti.example.ac.id</a>
+          <a href="https://instagram.com/suara.ti.example">@suara.ti.example</a>
+          <a href="tel:+622100000000">(021) 0000 0000</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Program Studi Teknik Informatika, UIN Jakarta</span>
+        <span>© 2026 SUARA-TI. Hak cipta dilindungi.</span>
+      </div>
+    </footer>
   </body>
 </html>
